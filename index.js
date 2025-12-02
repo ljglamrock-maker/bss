@@ -1365,7 +1365,7 @@ function BeeSwarmSimulator(DATA){
             isMachine:true,requirements:function(player){
                 
                 if(player.pollen<1) return 'You must have pollen to use the instant converter!'
-                if(items.ticket.amount<1) return 'You need 1 ticket to use the instant converter!'
+                if(items.ticket.amount<0) return 'You need 1 ticket to use the instant converter!'
             
             },minX:-39-4,maxX:-39+4,minY:30,maxY:37,minZ:88-4,maxZ:88+4,message:'Use Instant Converter<br>(1 Ticket)',func:function(player){
                 
@@ -2138,7 +2138,7 @@ function BeeSwarmSimulator(DATA){
         let bm=[
             {name:'honeyWreath',npc:'blackBear',cooldown:15*60,bounds:{minX:33.69,maxX:36.69,minY:1,maxY:6,minZ:-7.28,maxZ:-4.28},func:function(){
                 
-                let each=(player.extraInfo.beesmasMachines.honeyBee?2:1)*2*Math.ceil(25+(player.pollen*player.honeyPerPollen/8)),p=player.body.position
+                let each=(player.extraInfo.beesmasMachines.honeyBee?2:1)*2*Math.ceil(25+(player.pollen*player.honeyPerPollen*100000)),p=player.body.position
 
                 for(let i=0;i<MATH.TWO_PI;i+=MATH.TWO_PI/8){
                     
@@ -5262,8 +5262,8 @@ function BeeSwarmSimulator(DATA){
             
             update:(amount,player)=>{
                 
-                player.pollenFromTools*=1.25
-                player.pollenFromBees*=1.25
+                player.pollenFromTools*=1000
+                player.pollenFromBees*=1000
             },
             
             getMessage:(amount)=>{
@@ -5307,7 +5307,7 @@ function BeeSwarmSimulator(DATA){
             update:(amount,player)=>{
                 
                 player.convertRate*=1.5
-                player.instantRedConversion=MATH.applyPercentage(player.instantRedConversion,0.12)
+                player.instantRedConversion=MATH.applyPercentage(player.instantRedConversion,1)
                 player.instantWhiteConversion=MATH.applyPercentage(player.instantWhiteConversion,0.12)
                 player.instantBlueConversion=MATH.applyPercentage(player.instantBlueConversion,0.12)
             },
@@ -5330,7 +5330,7 @@ function BeeSwarmSimulator(DATA){
             
             update:(amount,player)=>{
                 
-                player.redPollen*=1.25
+                player.redPollen*=1000
             },
             
             getMessage:(amount)=>{
@@ -5351,7 +5351,7 @@ function BeeSwarmSimulator(DATA){
             
             update:(amount,player)=>{
                 
-                player.bluePollen*=1.25
+                player.bluePollen*=1000
             },
             
             getMessage:(amount)=>{
@@ -34760,4 +34760,5 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
