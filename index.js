@@ -2999,7 +2999,7 @@ function BeeSwarmSimulator(DATA){
         
         basic:{
             
-            u:0,v:0,meshPartId:0,gatherSpeed:4000,gatherAmount:10000000000,speed:146634636346,convertSpeed:4,convertAmount:800000000000,attack:1000000,energy:200000,favoriteTreat:'sunflowerSeed',rarity:'common',color:'white',description:'An ordinary bee. Well rounded and hard working!',giftedHiveBonus:{oper:'*',stat:'redPollen,bluePollen,whitePollen',num:1000}
+            u:0,v:0,meshPartId:0,gatherSpeed:40,gatherAmount:100,speed:14,convertSpeed:40,convertAmount:8000,attack:1,energy:200000,favoriteTreat:'sunflowerSeed',rarity:'common',color:'white',description:'An ordinary bee. Well rounded and hard working!',giftedHiveBonus:{oper:'*',stat:'redPollen,bluePollen,whitePollen',num:1000}
         },
         
         looker:{
@@ -3009,28 +3009,28 @@ function BeeSwarmSimulator(DATA){
         
         music:{
             
-            u:256/2048,v:0,meshPartId:5,gatherSpeed:4,gatherAmount:16,speed:16.1,tokens:['focus','melody','link'],convertSpeed:4,convertAmount:240,attack:1,attackTokens:['focus','melody','link'],energy:20,favoriteTreat:'blueberry',rarity:'legendary',color:'white',description:"This bee's buzz is so beautiful it can bring anyone to tears. It uses this gift to motivate others.",giftedHiveBonus:{oper:'*',stat:'pollenFromBees',num:1.25}
+            u:256/2048,v:0,meshPartId:5,gatherSpeed:40,gatherAmount:160,speed:16.1,tokens:['focus','melody','link'],convertSpeed:4,convertAmount:240,attack:1,attackTokens:['focus','melody','link'],energy:20,favoriteTreat:'blueberry',rarity:'legendary',color:'white',description:"This bee's buzz is so beautiful it can bring anyone to tears. It uses this gift to motivate others.",giftedHiveBonus:{oper:'*',stat:'pollenFromBees',num:1.25}
         },
         
         fire:{
             
-            u:(256+128)/2048,v:0,meshPartId:0,gatherSpeed:4,gatherAmount:10,speed:11.5,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.5:0.35)){objects.explosions.push(new Explosion({col:[1,0.5,0],pos:[Math.round(bee.pos[0]),bee.pos[1]-0.225,Math.round(bee.pos[2])],life:0.5,size:1.5,speed:0.5,aftershock:0.01,height:0.01}));objects.flames.push(new Flame(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},particles:function(bee){ParticleRenderer.add({x:bee.pos[0],y:bee.pos[1],z:bee.pos[2],vx:MATH.random(-0.3,0.3),vy:MATH.random(-0.3,0.3),vz:MATH.random(-0.3,0.3),grav:0,size:MATH.random(80,120),col:[player.isNight,MATH.random(0.4,0.7)*player.isNight,0],life:1.5,rotVel:MATH.random(-3,3),alpha:2.5})},convertSpeed:4,convertAmount:80,attack:4,tokens:['redBomb'],energy:25,favoriteTreat:'pineapple',rarity:'epic',color:'red',description:'As an egg, this bee was accidentally left in the trunk of a car in the middle of the summer for over 3 days!',giftedHiveBonus:{oper:'*',stat:'flamePollen',num:1.5}
+            u:(256+128)/2048,v:0,meshPartId:0,gatherSpeed:40,gatherAmount:100,speed:11.5,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.5:0.35)){objects.explosions.push(new Explosion({col:[1,0.5,0],pos:[Math.round(bee.pos[0]),bee.pos[1]-0.225,Math.round(bee.pos[2])],life:0.5,size:1.5,speed:0.5,aftershock:0.01,height:0.01}));objects.flames.push(new Flame(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},particles:function(bee){ParticleRenderer.add({x:bee.pos[0],y:bee.pos[1],z:bee.pos[2],vx:MATH.random(-0.3,0.3),vy:MATH.random(-0.3,0.3),vz:MATH.random(-0.3,0.3),grav:0,size:MATH.random(80,120),col:[player.isNight,MATH.random(0.4,0.7)*player.isNight,0],life:1.5,rotVel:MATH.random(-3,3),alpha:2.5})},convertSpeed:4,convertAmount:80,attack:4,tokens:['redBomb'],energy:25,favoriteTreat:'pineapple',rarity:'epic',color:'red',description:'As an egg, this bee was accidentally left in the trunk of a car in the middle of the summer for over 3 days!',giftedHiveBonus:{oper:'*',stat:'flamePollen',num:1.5}
         },
         
         bubble:{
             
-            u:(256+256)/2048,v:0,meshPartId:0,gatherSpeed:4,gatherAmount:10,speed:16.1,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.5:0.35)){objects.bubbles.push(new Bubble(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},particles:function(bee){ParticleRenderer.add({x:bee.pos[0],y:bee.pos[1],z:bee.pos[2],vx:MATH.random(-0.3,0.3),vy:MATH.random(-0.3,0.3),vz:MATH.random(-0.3,0.3),grav:0,size:MATH.random(35,70),col:[MATH.random(0.1,0.3)*player.isNight,MATH.random(0.4,0.6)*player.isNight,MATH.random(0.8,1)*player.isNight],life:1.5,rotVel:MATH.random(-3,3),alpha:2.5})},convertSpeed:4,convertAmount:160,attack:3,tokens:['blueBomb'],energy:20,favoriteTreat:'blueberry',rarity:'epic',color:'blue',description:'As a larva, this bee lived in the ocean. It loves Blue flowers cause they remind it of home.',giftedHiveBonus:{oper:'*',stat:'bubblePollen',num:1.5}
+            u:(256+256)/2048,v:0,meshPartId:0,gatherSpeed:40,gatherAmount:100,speed:16.1,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.5:0.35)){objects.bubbles.push(new Bubble(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},particles:function(bee){ParticleRenderer.add({x:bee.pos[0],y:bee.pos[1],z:bee.pos[2],vx:MATH.random(-0.3,0.3),vy:MATH.random(-0.3,0.3),vz:MATH.random(-0.3,0.3),grav:0,size:MATH.random(35,70),col:[MATH.random(0.1,0.3)*player.isNight,MATH.random(0.4,0.6)*player.isNight,MATH.random(0.8,1)*player.isNight],life:1.5,rotVel:MATH.random(-3,3),alpha:2.5})},convertSpeed:4,convertAmount:160,attack:3,tokens:['blueBomb'],energy:20,favoriteTreat:'blueberry',rarity:'epic',color:'blue',description:'As a larva, this bee lived in the ocean. It loves Blue flowers cause they remind it of home.',giftedHiveBonus:{oper:'*',stat:'bubblePollen',num:1.5}
         },
         
         hasty:{
             
-            u:128*5/2048,v:0,meshPartId:0,gatherSpeed:3,gatherAmount:10,speed:19.6,tokens:['haste'],convertSpeed:3,convertAmount:80,attack:1,attackTokens:['haste'],energy:20,favoriteTreat:'pineapple',rarity:'rare',color:'white',description:'A quick bee who always zips arounds. Sometimes it even makes YOU move faster.',giftedHiveBonus:{oper:'*',stat:'walkSpeed',num:1.1}
+            u:128*5/2048,v:0,meshPartId:0,gatherSpeed:30,gatherAmount:100,speed:19.6,tokens:['haste'],convertSpeed:3,convertAmount:80,attack:1,attackTokens:['haste'],energy:20,favoriteTreat:'pineapple',rarity:'rare',color:'white',description:'A quick bee who always zips arounds. Sometimes it even makes YOU move faster.',giftedHiveBonus:{oper:'*',stat:'walkSpeed',num:1.1}
             
         },
         
         bomber:{
             
-            u:128*6/2048,v:0,meshPartId:0,gatherSpeed:4,gatherAmount:10,speed:15.4,tokens:['whiteBomb'],convertSpeed:4,convertAmount:120,attack:2,energy:20,favoriteTreat:'sunflowerSeed',rarity:'rare',color:'white',description:'This crafty bee makes bombs which collect pollen from all nearby flowers.',giftedHiveBonus:{oper:'*',stat:'redBombPollen,blueBombPollen,whiteBombPollen',num:1.25}
+            u:128*6/2048,v:0,meshPartId:0,gatherSpeed:40,gatherAmount:100,speed:15.4,tokens:['whiteBomb'],convertSpeed:4,convertAmount:120,attack:2,energy:20,favoriteTreat:'sunflowerSeed',rarity:'rare',color:'white',description:'This crafty bee makes bombs which collect pollen from all nearby flowers.',giftedHiveBonus:{oper:'*',stat:'redBombPollen,blueBombPollen,whiteBombPollen',num:1.25}
             
         },
         
@@ -3082,7 +3082,7 @@ function BeeSwarmSimulator(DATA){
         
         stubborn:{
             
-            u:128*8/2048,v:0,meshPartId:0,gatherSpeed:4,gatherAmount:10,speed:11.9,tokens:['pollenMarkToken'],convertSpeed:3,convertAmount:80,attack:2,energy:20,favoriteTreat:'strawberry',rarity:'rare',color:'white',description:"A hardheaded bee who can't be bossed around. It tells others where to go.",giftedHiveBonus:{oper:'*',stat:'tokenLifespan',num:1.25}
+            u:128*8/2048,v:0,meshPartId:0,gatherSpeed:40,gatherAmount:100,speed:11.9,tokens:['pollenMarkToken'],convertSpeed:3,convertAmount:80,attack:2,energy:20,favoriteTreat:'strawberry',rarity:'rare',color:'white',description:"A hardheaded bee who can't be bossed around. It tells others where to go.",giftedHiveBonus:{oper:'*',stat:'tokenLifespan',num:1.25}
             
         },
         
@@ -3100,12 +3100,12 @@ function BeeSwarmSimulator(DATA){
         
         tadpole:{
             
-            u:128*11/2048,v:0,meshPartId:0,gatherSpeed:6,gatherAmount:10,speed:11.2,convertSpeed:4,convertAmount:120,tokens:['summonFrog','blueBoost','babyLove*'],attack:0.5,energy:10,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.75:0.55)){objects.bubbles.push(new Bubble(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},favoriteTreat:'blueberry',rarity:'mythic',color:'blue',description:'A tiny amphibious bee who wants to become a frog when it grows up.',giftedHiveBonus:{oper:'*',stat:'bluePollen',num:1.1},trails:[{length:8,size:0.14,color:[29/215, 133/215, 72/215,1],skipFrame:3,skipAdd:3,vertical:true}]
+            u:128*11/2048,v:0,meshPartId:0,gatherSpeed:60,gatherAmount:100,speed:11.2,convertSpeed:40,convertAmount:12000,tokens:['summonFrog','blueBoost','babyLove*'],attack:0.5,energy:10,gatheringPassive:function(bee){if(Math.random()<(bee.gifted?0.75:0.55)){objects.bubbles.push(new Bubble(player.fieldIn,bee.flowerCollecting[0],bee.flowerCollecting[1]))}},favoriteTreat:'blueberry',rarity:'mythic',color:'blue',description:'A tiny amphibious bee who wants to become a frog when it grows up.',giftedHiveBonus:{oper:'*',stat:'bluePollen',num:1.1},trails:[{length:8,size:0.14,color:[29/215, 133/215, 72/215,1],skipFrame:3,skipAdd:3,vertical:true}]
         },
         
         buoyant:{
             
-            u:128*12/2048,v:0,meshPartId:3,gatherSpeed:5,gatherAmount:15,speed:14,convertSpeed:3,convertAmount:150,tokens:['inflateBalloons','surpriseParty*','blueBomb_'],attack:5,energy:60,favoriteTreat:'blueberry',rarity:'mythic',color:'blue',description:"Just like a balloon, nothing can keep this bee down. It's always ready to party.",giftedHiveBonus:{oper:'*',stat:'capacityMultiplier',num:1.2}
+            u:128*12/2048,v:0,meshPartId:3,gatherSpeed:500,gatherAmount:1500,speed:30,convertSpeed:3000,convertAmount:150000,tokens:['inflateBalloons','surpriseParty*','blueBomb_'],attack:5,energy:60,favoriteTreat:'blueberry',rarity:'mythic',color:'blue',description:"Just like a balloon, nothing can keep this bee down. It's always ready to party.",giftedHiveBonus:{oper:'*',stat:'capacityMultiplier',num:1.2}
             
         },
         
@@ -3122,7 +3122,7 @@ function BeeSwarmSimulator(DATA){
         
         rage:{
             
-            u:128*15/2048,v:0,meshPartId:0,gatherSpeed:4,gatherAmount:10,speed:15.4,convertSpeed:4,convertAmount:80,attack:4,tokens:['link'],energy:20,attackTokens:['rage','link'],favoriteTreat:'strawberry',rarity:'epic',color:'red',description:'A very angry bee who has been wronged its whole life. It harnesses its rage to become more powerful.',giftedHiveBonus:{oper:'+',stat:'whiteBeeAttack,redBeeAttack,blueBeeAttack',num:1}
+            u:128*15/2048,v:0,meshPartId:0,gatherSpeed:400,gatherAmount:100000,speed:30.4,convertSpeed:40,convertAmount:80000000,attack:400,tokens:['link'],energy:2000,attackTokens:['rage','link'],favoriteTreat:'strawberry',rarity:'epic',color:'red',description:'A very angry bee who has been wronged its whole life. It harnesses its rage to become more powerful.',giftedHiveBonus:{oper:'+',stat:'whiteBeeAttack,redBeeAttack,blueBeeAttack',num:1}
         },
         
         crimson:{
@@ -34760,5 +34760,6 @@ function BeeSwarmSimulator(DATA){
     
 
 }
+
 
 
